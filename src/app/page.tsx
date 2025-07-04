@@ -1,102 +1,112 @@
+
 import Image from "next/image";
 
 export default function Home() {
   return (
-    <div className="grid grid-rows-[20px_1fr_20px] items-center justify-items-center min-h-screen p-8 pb-20 gap-16 sm:p-20 font-[family-name:var(--font-geist-sans)]">
-      <main className="flex flex-col gap-[32px] row-start-2 items-center sm:items-start">
-        <Image
-          className="dark:invert"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={180}
-          height={38}
-          priority
-        />
-        <ol className="list-inside list-decimal text-sm/6 text-center sm:text-left font-[family-name:var(--font-geist-mono)]">
-          <li className="mb-2 tracking-[-.01em]">
-            Get started by editing{" "}
-            <code className="bg-black/[.05] dark:bg-white/[.06] px-1 py-0.5 rounded font-[family-name:var(--font-geist-mono)] font-semibold">
-              src/app/page.tsx
-            </code>
-            .
-          </li>
-          <li className="tracking-[-.01em]">
-            Save and see your changes instantly.
-          </li>
-        </ol>
-
-        <div className="flex gap-4 items-center flex-col sm:flex-row">
-          <a
-            className="rounded-full border border-solid border-transparent transition-colors flex items-center justify-center bg-foreground text-background gap-2 hover:bg-[#383838] dark:hover:bg-[#ccc] font-medium text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 sm:w-auto"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className="dark:invert"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={20}
-              height={20}
-            />
-            Deploy now
-          </a>
-          <a
-            className="rounded-full border border-solid border-black/[.08] dark:border-white/[.145] transition-colors flex items-center justify-center hover:bg-[#f2f2f2] dark:hover:bg-[#1a1a1a] hover:border-transparent font-medium text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 w-full sm:w-auto md:w-[158px]"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Read our docs
-          </a>
+    <div className="min-h-screen flex flex-col font-sans bg-white text-gray-900">
+      {/* Hero Section */}
+      <section className="flex flex-col items-center justify-center py-20 px-4 text-center bg-gradient-to-b from-[#f7f6f3] to-white border-b border-gray-200">
+        <h1 className="text-4xl sm:text-6xl font-bold mb-4 tracking-tight">Ready to architect your next big idea?</h1>
+        <p className="text-xl sm:text-2xl mb-8 max-w-2xl mx-auto">Hi, I’m <span className="font-semibold">Mark Salvador</span> — Solutions Architect & Technology Leader. I help organizations design, build, and scale secure, high-performance systems that solve real business problems.</p>
+        <div className="flex flex-wrap gap-4 justify-center mb-8">
+          <a href="https://github.com/Albiemark" className="bg-black text-white px-6 py-3 rounded-full font-medium hover:bg-gray-800 transition" target="_blank" rel="noopener noreferrer">GitHub</a>
+          <a href="https://huggingface.co/Albiemark" className="bg-blue-600 text-white px-6 py-3 rounded-full font-medium hover:bg-blue-700 transition" target="_blank" rel="noopener noreferrer">Hugging Face</a>
+          <a href="/docs/Mark%20Salvador_CV2.pdf" className="bg-gray-200 text-gray-900 px-6 py-3 rounded-full font-medium hover:bg-gray-300 transition" target="_blank" rel="noopener noreferrer">Download CV</a>
         </div>
-      </main>
-      <footer className="row-start-3 flex gap-[24px] flex-wrap items-center justify-center">
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/file.svg"
-            alt="File icon"
-            width={16}
-            height={16}
-          />
-          Learn
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/window.svg"
-            alt="Window icon"
-            width={16}
-            height={16}
-          />
-          Examples
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/globe.svg"
-            alt="Globe icon"
-            width={16}
-            height={16}
-          />
-          Go to nextjs.org →
-        </a>
+        <Image
+          src="https://avatars.githubusercontent.com/u/152335716?v=4"
+          alt="Mark Salvador GitHub Avatar"
+          width={120}
+          height={120}
+          className="rounded-full border-4 border-white shadow-lg mt-4"
+        />
+      </section>
+
+      {/* About / Skills Section */}
+      <section className="py-16 px-4 bg-[#f7f6f3] text-center border-b border-gray-200">
+        <h2 className="text-2xl font-semibold mb-4">About Me</h2>
+        <p className="max-w-2xl mx-auto mb-6 text-lg">Innovative Solutions Architect with 15+ years of experience designing, building, and leading enterprise software solutions. Expert in cloud architecture, distributed systems, and cross-functional team leadership. Passionate about leveraging technology to solve complex business challenges and deliver scalable, secure, and high-performance systems.</p>
+        <h3 className="text-xl font-bold mt-8 mb-4">Core Skills</h3>
+        <ul className="flex flex-wrap justify-center gap-4 text-base text-gray-800 mb-4">
+          <li className="bg-white rounded px-3 py-1 shadow">Cloud Architecture (AWS, Azure, GCP)</li>
+          <li className="bg-white rounded px-3 py-1 shadow">Distributed Systems</li>
+          <li className="bg-white rounded px-3 py-1 shadow">DevOps & CI/CD</li>
+          <li className="bg-white rounded px-3 py-1 shadow">API & Microservices Design</li>
+          <li className="bg-white rounded px-3 py-1 shadow">AI/ML Integration</li>
+          <li className="bg-white rounded px-3 py-1 shadow">Security & Compliance</li>
+          <li className="bg-white rounded px-3 py-1 shadow">Team Leadership & Mentoring</li>
+          <li className="bg-white rounded px-3 py-1 shadow">Agile & Scrum</li>
+        </ul>
+      </section>
+
+      {/* Personal Statement / Testimonial Section */}
+      <section className="py-12 px-4 text-center bg-white border-b border-gray-200">
+        <blockquote className="italic max-w-2xl mx-auto text-xl text-gray-700 mb-4">“Mark’s architectural vision and technical leadership transformed our cloud migration project. He brings clarity, innovation, and a collaborative spirit to every challenge.”</blockquote>
+        <p className="text-gray-600">— CTO, Enterprise Client</p>
+      </section>
+
+      {/* About / Skills Section */}
+      <section className="py-8 px-4 text-center bg-white">
+        <h2 className="text-2xl font-semibold mb-4">About Me</h2>
+        <p className="max-w-2xl mx-auto mb-4">As a Solutions Architect, I specialize in designing robust, scalable, and secure systems for organizations across diverse industries. My expertise spans cloud-native architectures (AWS, Azure, GCP), microservices, DevOps, and AI/ML integration. I thrive in collaborative environments, guiding teams from concept to deployment, and ensuring alignment with business goals.</p>
+        <h3 className="text-xl font-bold mt-8 mb-2">Core Skills</h3>
+        <ul className="flex flex-wrap justify-center gap-4 text-base text-gray-800 mb-4">
+          <li className="bg-gray-100 rounded px-3 py-1">Cloud Architecture (AWS, Azure, GCP)</li>
+          <li className="bg-gray-100 rounded px-3 py-1">Distributed Systems</li>
+          <li className="bg-gray-100 rounded px-3 py-1">DevOps & CI/CD</li>
+          <li className="bg-gray-100 rounded px-3 py-1">API & Microservices Design</li>
+          <li className="bg-gray-100 rounded px-3 py-1">AI/ML Integration</li>
+          <li className="bg-gray-100 rounded px-3 py-1">Security & Compliance</li>
+          <li className="bg-gray-100 rounded px-3 py-1">Team Leadership & Mentoring</li>
+          <li className="bg-gray-100 rounded px-3 py-1">Agile & Scrum</li>
+        </ul>
+        <div className="mt-4">
+          <a href="/docs/Mark%20Salvador_CV2.pdf" className="text-blue-600 underline font-medium" target="_blank" rel="noopener noreferrer">Download Full CV (PDF)</a>
+        </div>
+      </section>
+
+      {/* Featured Project Section */}
+      <section className="py-16 px-4 bg-[#f7f6f3] text-center border-b border-gray-200">
+        <h2 className="text-2xl font-semibold mb-4">Featured Project</h2>
+        <h3 className="text-xl font-bold mb-2">Matlock - Canadian Immigration and Refugee Law Model</h3>
+        <p className="max-w-2xl mx-auto mb-4">As Solutions Architect, I led the design and deployment of Matlock (legal-mistral-immigration-v2), an advanced AI model for analyzing and explaining Canadian immigration and refugee law. This project integrates legal data sources, leverages Mistral 7B, and demonstrates expertise in secure, scalable AI/ML system architecture.</p>
+        <div className="bg-white rounded-lg shadow p-4 max-w-xl mx-auto mb-4 text-left">
+          <pre className="overflow-x-auto text-xs"><code>{`from transformers import AutoTokenizer, AutoModelForCausalLM\n\nmodel = AutoModelForCausalLM.from_pretrained(\"Albiemark/matlock-canadian-law\")\ntokenizer = AutoTokenizer.from_pretrained(\"Albiemark/matlock-canadian-law\")\n\nquery = \"What is the definition of a Convention refugee in Canadian law?\"\ninputs = tokenizer(query, return_tensors=\"pt\")\noutputs = model.generate(**inputs)\nresponse = tokenizer.decode(outputs[0])`}</code></pre>
+        </div>
+        <p className="mb-2 text-sm text-gray-700">Provides legal information, not legal advice. <a href="https://huggingface.co/Albiemark/matlock-canadian-law" className="text-blue-600 underline" target="_blank" rel="noopener noreferrer">View on Hugging Face</a></p>
+      </section>
+
+      {/* Portfolio Section */}
+      <section className="py-16 px-4 text-center bg-white">
+        <h2 className="text-2xl font-semibold mb-8">Portfolio Highlights</h2>
+        <div className="flex flex-col md:flex-row gap-8 justify-center">
+          <div className="flex-1 min-w-[220px]">
+            <h3 className="font-bold mb-2"><a href="https://github.com/Albiemark/trello-clone" className="text-blue-600 underline" target="_blank" rel="noopener noreferrer">Trello Clone</a></h3>
+            <p className="mb-2">Architected and developed a scalable Kanban-style project management app using TypeScript and modern web technologies.</p>
+          </div>
+          <div className="flex-1 min-w-[220px]">
+            <h3 className="font-bold mb-2"><a href="https://github.com/Albiemark/dbx-mcp-server" className="text-blue-600 underline" target="_blank" rel="noopener noreferrer">Dropbox MCP Server</a></h3>
+            <p className="mb-2">Designed a robust Dropbox MCP server for cursor .47, focusing on API integration, security, and reliability (TypeScript).</p>
+          </div>
+          <div className="flex-1 min-w-[220px]">
+            <h3 className="font-bold mb-2"><a href="https://github.com/Albiemark/VeeMatch" className="text-blue-600 underline" target="_blank" rel="noopener noreferrer">VeeMatch</a></h3>
+            <p className="mb-2">Led the architecture and implementation of a spiritual connection app, enabling secure user engagement and scalable features (TypeScript).</p>
+          </div>
+          <div className="flex-1 min-w-[220px]">
+            <h3 className="font-bold mb-2"><a href="https://github.com/Albiemark/LLM-Trainer" className="text-blue-600 underline" target="_blank" rel="noopener noreferrer">LLM-Trainer</a></h3>
+            <p className="mb-2">Built a flexible Python-based platform for training and evaluating large language models, supporting custom workflows and automation.</p>
+          </div>
+        </div>
+      </section>
+
+      {/* Footer */}
+      <footer className="py-8 px-4 text-center text-sm text-gray-500 bg-white border-t mt-auto">
+        <div className="mb-2">© {new Date().getFullYear()} Albiemark</div>
+        <div className="flex flex-wrap justify-center gap-4">
+          <a href="https://github.com/Albiemark" className="underline" target="_blank" rel="noopener noreferrer">GitHub</a>
+          <a href="https://huggingface.co/Albiemark" className="underline" target="_blank" rel="noopener noreferrer">Hugging Face</a>
+          <a href="https://huggingface.co/Albiemark/matlock-canadian-law" className="underline" target="_blank" rel="noopener noreferrer">Matlock Model</a>
+        </div>
       </footer>
     </div>
   );
