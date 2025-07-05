@@ -44,7 +44,7 @@ const skillsData: SkillCategory[] = [
   },
   {
     category: "Methodologies",
-    skills: ["TeamMembers (NCR)", "TeamMethods (UNISYS)", "CMMi", "PMBOK", "ISO 9002"],
+    skills: ["TeamMembers (NCR)", "TeamMethods (UNISYS)", "CMMi", "PMBOK", "PMP/PMI", "ISO 9002"],
   },
 ];
 

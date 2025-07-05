@@ -5,52 +5,13 @@ import CertificationsSection from "../components/CertificationsSection";
 import SkillsMatrix from "../components/SkillsMatrix";
 import ProjectCard from "../components/ProjectCard";
 import ProjectFilter from "../components/ProjectFilter";
+import PhotoGallery from "../components/PhotoGallery";
 import { useState } from "react";
+import { projects } from "../data/projects";
+import { Project } from "../types";
 
 export default function Home() {
-  const projects: {
-    title: string;
-    description: string;
-    githubLink: string;
-    tags: string[];
-    imageUrl?: string;
-    outcomeMetrics?: string[];
-  }[] = [
-    {
-      title: "Trello Clone",
-      description: "Architected and developed a scalable Kanban-style project management app using TypeScript and modern web technologies.",
-      githubLink: "https://github.com/Albiemark/trello-clone",
-      tags: ["TypeScript", "Web Development", "React"],
-      imageUrl: "/images/trello-clone.png", // Placeholder image
-      outcomeMetrics: ["Improved team collaboration by 20%", "Reduced project delivery time by 15%"],
-    },
-    {
-      title: "Dropbox MCP Server",
-      description: "Designed a robust Dropbox MCP server for cursor .47, focusing on API integration, security, and reliability (TypeScript).",
-      githubLink: "https://github.com/Albiemark/dbx-mcp-server",
-      tags: ["TypeScript", "API Integration", "Security"],
-      imageUrl: "/images/dropbox-mcp-server.png", // Placeholder image
-      outcomeMetrics: ["Achieved 99.9% uptime", "Secured data transfer with end-to-end encryption"],
-    },
-    {
-      title: "VeeMatch",
-      description: "Led the architecture and implementation of a spiritual connection app, enabling secure user engagement and scalable features (TypeScript).",
-      githubLink: "https://github.com/Albiemark/VeeMatch",
-      tags: ["TypeScript", "Mobile App", "Database"],
-      imageUrl: "/images/veematch.png", // Placeholder image
-      outcomeMetrics: ["Increased user engagement by 30%", "Scalable to 100K+ users"],
-    },
-    {
-      title: "LLM-Trainer",
-      description: "Built a flexible Python-based platform for training and evaluating large language models, supporting custom workflows and automation.",
-      githubLink: "https://github.com/Albiemark/LLM-Trainer",
-      tags: ["Python", "AI/ML", "Automation"],
-      imageUrl: "/images/llm-trainer.png", // Placeholder image
-      outcomeMetrics: ["Reduced model training time by 25%", "Automated data preprocessing for efficiency"],
-    },
-  ];
-
-  const [filteredProjects, setFilteredProjects] = useState(projects);
+  const [filteredProjects, setFilteredProjects] = useState<Project[]>(projects);
 
   return (
     <div className="min-h-screen flex flex-col font-sans bg-white text-gray-900">
@@ -61,7 +22,7 @@ export default function Home() {
         <div className="flex flex-wrap gap-4 justify-center mb-8">
           <a href="https://github.com/Albiemark" className="bg-black text-white px-6 py-3 rounded-full font-medium hover:bg-gray-800 transition" target="_blank" rel="noopener noreferrer">GitHub</a>
           <a href="https://huggingface.co/Albiemark" className="bg-blue-600 text-white px-6 py-3 rounded-full font-medium hover:bg-blue-700 transition" target="_blank" rel="noopener noreferrer">Hugging Face</a>
-          <a href="/docs/Mark%20Salvador_CV2.pdf" className="bg-gray-200 text-gray-900 px-6 py-3 rounded-full font-medium hover:bg-gray-300 transition" target="_blank" rel="noopener noreferrer">Download CV</a>
+          <a href="/docs/best-cv-pm.pdf" className="bg-gray-200 text-gray-900 px-6 py-3 rounded-full font-medium hover:bg-gray-300 transition" target="_blank" rel="noopener noreferrer">Download CV</a>
         </div>
         <Image
           src="/me.jpg"
@@ -116,6 +77,9 @@ export default function Home() {
           ))}
         </div>
       </section>
+
+      {/* Photo Gallery Section */}
+      <PhotoGallery />
 
       {/* Footer */}
       <footer className="py-8 px-4 text-center text-sm text-gray-500 bg-white border-t mt-auto">

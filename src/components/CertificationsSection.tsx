@@ -7,7 +7,6 @@ interface Certification {
 
 const certificationsData: Certification[] = [
   { name: "AWS Certified Solutions Architect", year: 2023 },
-  { name: "Certified Information Systems Security Professional (CISSP)" },
   { name: "Project Management Professional (PMP)" },
 ];
 
@@ -25,9 +24,19 @@ const CertificationsSection: React.FC = () => {
           ))}
         </ul>
         {/* Add education background and ongoing learning here if available in consolidated resume */}
-        <p className="text-gray-700 mt-4">
-          Further education and ongoing learning details can be added here.
-        </p>
+        <div>
+          <h3 className="text-xl font-semibold mt-8 mb-4">Education</h3>
+          <div className="text-left">
+            <p className="text-lg text-gray-800 mb-1">
+              <span className="font-medium">2023 – 2025</span> Red River College Polytech (Exchange)
+            </p>
+            <p className="text-md text-gray-600 ml-4">Advanced Dipoma BIT - Information Security</p>
+            <p className="text-lg text-gray-800 mt-4 mb-1">
+              <span className="font-medium">1988 - 1994</span> University of the Philippines, Diliman
+            </p>
+            <p className="text-md text-gray-600 ml-4">BSPED (Bachelor Special Education)</p>
+          </div>
+        </div>
       </div>
     </section>
   );

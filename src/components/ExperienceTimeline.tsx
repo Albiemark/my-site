@@ -22,7 +22,7 @@ const experienceData: ExperienceEntry[] = [
       "Developed the back-end data architecture using ChromaDB to enable self-learning through experience and aggregation of new datasets.",
       "Developed an in-house local chat-bot for simple data housekeeping, scheduling, and task automation.",
     ],
-    imageUrl: "/file.svg", // Using an existing image
+    imageUrl: "/suit.jpg", // Using an existing image
   },
   {
     title: "Security Architect/Solution Architect",
@@ -34,7 +34,7 @@ const experienceData: ExperienceEntry[] = [
       "Provided advice and coaching to a cross-functional team of 5 developers in Scrum methodologies, accelerating deployment cycles by 15% through CI/CD pipeline optimization.",
       "Built a Workflow Automation RAG agent.",
     ],
-    imageUrl: "/window.svg", // Using an existing image
+    imageUrl: "/skul.jpg", // Using an existing image
   },
   {
     title: "Solutions Architect",
@@ -60,113 +60,121 @@ const experienceData: ExperienceEntry[] = [
     imageUrl: "/broadband.jpg", // Using an existing image
   },
   {
+    title: "Tramigo T20",
+    company: "Tramigo Ltd., Finland",
+    duration: "2006-2011",
+    description: [
+      "Development of a complete application suite used for fleet management. Led a large team of IT professionals, organized Dev team structure, handled operations and logistics.",
+    ],
+  },
+  {
     title: "Faciliworks.NET",
-    company: "Project Experience (from old resume, dates not specified)",
-    duration: "Dates not specified",
+    company: "Cyberware Inc./Cybermetrics AZ",
+    duration: "2003-2006",
     description: [
       "Development of a complete application suite used for managing facilities. Led a large team of IT professionals, organized Dev team structure, and handled day-to-day office activities.",
     ],
   },
   {
     title: "FaciliWorks 6i (Web)/FaciliWorks 6 (Desktop)/ FSW7 Denso (FaciliWorks 7i .Net version)",
-    company: "Project Experience (from old resume, dates not specified)",
-    duration: "Dates not specified",
+    company: "Cyberware Inc./Cybermetrics AZ",
+    duration: "2003-2006",
     description: [
       "Client-Server and Web based facilities management software. Led a team of 24 IT professionals.",
     ],
   },
   {
     title: "VRT Vessel Reporting Tool",
-    company: "Project Experience (from old resume, dates not specified)",
-    duration: "Dates not specified",
+    company: "Devco Philippines",
+    duration: "2001-2003",
     description: [
       "Internet Based Application for the Maritime Industry. Handled a team of 16 Consultants/Analysts/Programmers. Developed a complete reporting suite including desktop application, X500 based membership system, Web based report viewing tool, and a Data Warehouse application handling vessel reports.",
     ],
   },
   {
     title: "E-PROC",
-    company: "Project Experience (from old resume, dates not specified)",
-    duration: "Dates not specified",
+    company: "Devco Philippines",
+    duration: "2001-2003",
     description: [
       "E-procurement for the Shipping Industry. Handled a team of 6 Consultants/Analysts/Programmers. Headed a team tasked to develop a centralized e-procurement system catering multiple types of ERP applications (E-Commerce B2B/B2C) using WebMethods as a central middleware and transaction server. Helped develop the applications security architecture using Microsoft PKI technology. Migrated old procurements system using ARENA into new Web based e-procurements system, catering to vessel ordering via satellite networks.",
     ],
   },
   {
     title: "SSS BRP/BRC Project (SSS 2nd node, Luzon)",
-    company: "Project Experience (from old resume, dates not specified)",
-    duration: "Dates not specified",
+    company: "Unisys Philippines",
+    duration: "2000-2001",
     description: [
       "Project manager/technical consultant, helped implement ongoing backup recovery project for SSS, managed a team of ten software engineers.",
     ],
   },
   {
     title: "NSO CRS Project (National Statistics Office Civil Registration System)",
-    company: "Project Experience (from old resume, dates not specified)",
-    duration: "Dates not specified",
+    company: "Unisys Philippines",
+    duration: "2000-2001",
     description: [
       "Technical consultant, helped define the initial technical architecture of the NSO civil registration system covering the three major islands and each province. Developed the technical section of the FSD (Functional Specifications Detail) and helped in the initial development environment design including schematic design of a data warehouse using MSSQL 7.0 OLAP services.",
     ],
   },
   {
     title: "EDS ISCweb Helpdesk Web based helpdesk for EDSBKK ISC (International Support Center) EDS (Thailand) Ltd.",
-    company: "Project Experience (from old resume, dates not specified)",
-    duration: "Dates not specified",
+    company: "EDS Bangkok ISC (International Support Center)",
+    duration: "1999-2000",
     description: [
       "Designed, developed and implemented the ISC web helpdesk. Designed Internet/Extranet Architecture. Designed and developed MSSQL Database. Lead a five-man team consisting of 2 analysts and 3 programmers. Team conducted extensive JBA System21 ERP module customization running on AS400. Team also handled data transformation for import and export to different ERP applications like ARIBA, JDEdwards and SAP.",
     ],
   },
   {
     title: "RBANK/NCR Switchmark project",
-    company: "Project Experience (from old resume, dates not specified)",
-    duration: "Dates not specified",
+    company: "NCR-NCR Software Group ASPAC (Asia Pacific)",
+    duration: "1996-1999",
     description: [
       "Switch Installation, Implementation, Development, and Testing for Robinson’s Savings Bank. Developed Host interfaces with an Interchange, installation (roll out of product), UAT (user acceptance testing), maintained a 7x24x365 system. OS Platform: NCR UNIX, Windows, and Windows NT.",
     ],
   },
   {
     title: "RBANK SSDS Development ATM Application Design/Development, Testing",
-    company: "Project Experience (from old resume, dates not specified)",
-    duration: "Dates not specified",
+    company: "NCR-NCR Software Group ASPAC (Asia Pacific)",
+    duration: "1996-1999",
     description: [
       "For Robinson’s Savings Bank, NCR Singapore (Chai Chee Office). Developed transactions for the ATM including supervisor functions. OS Platform: OS/2 Warp.",
     ],
   },
   {
     title: "NCR FSG Road show (Serving the Invisible Customer)",
-    company: "Project Experience (from old resume, dates not specified)",
-    duration: "Dates not specified",
+    company: "NCR-NCR Software Group ASPAC (Asia Pacific)",
+    duration: "1996-1999",
     description: [
       "Financial Solutions Group Product demonstration Asia Pacific Tour (SwitchMark, Branch Automation, Call Center, Internet Banking) Manila Philippines, KL Malaysia, Sydney Australia.",
     ],
   },
   {
     title: "Bahn Hin Lee BranchView NT Customization project",
-    company: "Project Experience (from old resume, dates not specified)",
-    duration: "Dates not specified",
+    company: "NCR-NCR Software Group ASPAC (Asia Pacific)",
+    duration: "1996-1999",
     description: [
       "Branch Automation customization project for Bahn Hin Lee Bank, KL Malaysia. Customized transactions for tellering applications. OS Platform: Windows NT Server/Workstation.",
     ],
   },
   {
     title: "Digikard online phonecard shopping (http://Digikard.com.ph)",
-    company: "Project Experience (from old resume, dates not specified)",
-    duration: "Dates not specified",
+    company: "Digital Farm ",
+    duration: "1995-1996",
     description: [
       "Design and Development for Digitel Communications Inc. OS Platform: HP UNIX, Windows 95.",
     ],
   },
   {
     title: "WorldRoom (Manila)",
-    company: "Project Experience (from old resume, dates not specified)",
-    duration: "Dates not specified",
+    company: "I-Quest Corporation (Hong Kong) Ltd.",
+    duration: "1995-1996",
     description: [
       "Product Consultant (Design, and Development) for I-Quest Corporation (HK) Ltd.",
     ],
   },
   {
     title: "PICC (Philippine International Convention Center)",
-    company: "Project Experience (from old resume, dates not specified)",
-    duration: "Dates not specified",
+    company: "Intellimedia Corp.",
+    duration: "1994-1995",
     description: [
       "Production Consultant for Multimedia Information Kiosk Design, Development and Maintenance.",
     ],

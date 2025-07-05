@@ -2,16 +2,9 @@ import React from 'react';
 
 import Image from "next/image";
 
-interface ProjectCardProps {
-  title: string;
-  description: string;
-  githubLink: string;
-  tags: string[];
-  imageUrl?: string;
-  outcomeMetrics?: string[];
-}
+import { Project } from '../types';
 
-const ProjectCard: React.FC<ProjectCardProps> = ({ title, description, githubLink, tags, imageUrl, outcomeMetrics }) => {
+const ProjectCard: React.FC<Project> = ({ title, description, githubLink, tags, imageUrl, outcomeMetrics }) => {
   return (
     <div className="bg-white rounded-lg shadow-md p-6 flex-1 min-w-[280px] max-w-sm">
       {imageUrl && (

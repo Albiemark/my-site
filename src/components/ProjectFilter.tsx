@@ -1,13 +1,6 @@
 import React, { useState } from 'react';
 
-interface Project {
-  title: string;
-  description: string;
-  githubLink: string;
-  tags: string[];
-  imageUrl?: string;
-  outcomeMetrics?: string[];
-}
+import { Project } from '../types';
 
 interface ProjectFilterProps {
   projects: Project[];
