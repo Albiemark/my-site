@@ -1,7 +1,57 @@
-
+'use client';
 import Image from "next/image";
+import ExperienceTimeline from "../components/ExperienceTimeline";
+import CertificationsSection from "../components/CertificationsSection";
+import SkillsMatrix from "../components/SkillsMatrix";
+import ProjectCard from "../components/ProjectCard";
+import ProjectFilter from "../components/ProjectFilter";
+import { useState } from "react";
 
 export default function Home() {
+  const projects: {
+    title: string;
+    description: string;
+    githubLink: string;
+    tags: string[];
+    imageUrl?: string;
+    outcomeMetrics?: string[];
+  }[] = [
+    {
+      title: "Trello Clone",
+      description: "Architected and developed a scalable Kanban-style project management app using TypeScript and modern web technologies.",
+      githubLink: "https://github.com/Albiemark/trello-clone",
+      tags: ["TypeScript", "Web Development", "React"],
+      imageUrl: "/images/trello-clone.png", // Placeholder image
+      outcomeMetrics: ["Improved team collaboration by 20%", "Reduced project delivery time by 15%"],
+    },
+    {
+      title: "Dropbox MCP Server",
+      description: "Designed a robust Dropbox MCP server for cursor .47, focusing on API integration, security, and reliability (TypeScript).",
+      githubLink: "https://github.com/Albiemark/dbx-mcp-server",
+      tags: ["TypeScript", "API Integration", "Security"],
+      imageUrl: "/images/dropbox-mcp-server.png", // Placeholder image
+      outcomeMetrics: ["Achieved 99.9% uptime", "Secured data transfer with end-to-end encryption"],
+    },
+    {
+      title: "VeeMatch",
+      description: "Led the architecture and implementation of a spiritual connection app, enabling secure user engagement and scalable features (TypeScript).",
+      githubLink: "https://github.com/Albiemark/VeeMatch",
+      tags: ["TypeScript", "Mobile App", "Database"],
+      imageUrl: "/images/veematch.png", // Placeholder image
+      outcomeMetrics: ["Increased user engagement by 30%", "Scalable to 100K+ users"],
+    },
+    {
+      title: "LLM-Trainer",
+      description: "Built a flexible Python-based platform for training and evaluating large language models, supporting custom workflows and automation.",
+      githubLink: "https://github.com/Albiemark/LLM-Trainer",
+      tags: ["Python", "AI/ML", "Automation"],
+      imageUrl: "/images/llm-trainer.png", // Placeholder image
+      outcomeMetrics: ["Reduced model training time by 25%", "Automated data preprocessing for efficiency"],
+    },
+  ];
+
+  const [filteredProjects, setFilteredProjects] = useState(projects);
+
   return (
     <div className="min-h-screen flex flex-col font-sans bg-white text-gray-900">
       {/* Hero Section */}
@@ -14,56 +64,26 @@ export default function Home() {
           <a href="/docs/Mark%20Salvador_CV2.pdf" className="bg-gray-200 text-gray-900 px-6 py-3 rounded-full font-medium hover:bg-gray-300 transition" target="_blank" rel="noopener noreferrer">Download CV</a>
         </div>
         <Image
-          src="https://avatars.githubusercontent.com/u/152335716?v=4"
-          alt="Mark Salvador GitHub Avatar"
-          width={120}
-          height={120}
-          className="rounded-full border-4 border-white shadow-lg mt-4"
+          src="/me.jpg"
+          alt="Mark Salvador Professional Headshot"
+          width={150}
+          height={150}
+          className="rounded-full border-4 border-white shadow-lg mt-4 object-cover"
         />
       </section>
 
-      {/* About / Skills Section */}
+      {/* Profile Summary Section */}
       <section className="py-16 px-4 bg-[#f7f6f3] text-center border-b border-gray-200">
-        <h2 className="text-2xl font-semibold mb-4">About Me</h2>
-        <p className="max-w-2xl mx-auto mb-6 text-lg">Innovative Solutions Architect with 15+ years of experience designing, building, and leading enterprise software solutions. Expert in cloud architecture, distributed systems, and cross-functional team leadership. Passionate about leveraging technology to solve complex business challenges and deliver scalable, secure, and high-performance systems.</p>
-        <h3 className="text-xl font-bold mt-8 mb-4">Core Skills</h3>
-        <ul className="flex flex-wrap justify-center gap-4 text-base text-gray-800 mb-4">
-          <li className="bg-white rounded px-3 py-1 shadow">Cloud Architecture (AWS, Azure, GCP)</li>
-          <li className="bg-white rounded px-3 py-1 shadow">Distributed Systems</li>
-          <li className="bg-white rounded px-3 py-1 shadow">DevOps & CI/CD</li>
-          <li className="bg-white rounded px-3 py-1 shadow">API & Microservices Design</li>
-          <li className="bg-white rounded px-3 py-1 shadow">AI/ML Integration</li>
-          <li className="bg-white rounded px-3 py-1 shadow">Security & Compliance</li>
-          <li className="bg-white rounded px-3 py-1 shadow">Team Leadership & Mentoring</li>
-          <li className="bg-white rounded px-3 py-1 shadow">Agile & Scrum</li>
-        </ul>
+        <h2 className="text-2xl font-semibold mb-4">Profile Summary</h2>
+        <p className="max-w-2xl mx-auto mb-6 text-lg">An experienced IT professional with decades of IT experience, from solutions architecture, software development, network administration, systems design and security assessment. Proven ability to scale solutions and lead enterprise-wide transformations. Collaborative and curious, I excel in rigorous agile delivery, robust solutioning, data security, and operational excellence. I believe that AI will change the world, but it is the human connections that will make it a better place.</p>
+        <p className="max-w-2xl mx-auto mb-6 text-lg">Mr. Salvador is a technical architecture consultant and his experience includes project management, system analysis and design, programming, testing, implementation, deployment, and production support. He can work independently or as a team member, and takes pride in completing work on schedule and minimal rework. He has extensive experience in OSX, UNIX, NT, Win7/82k and other MS products. His ability to quickly learn and absorb foreign languages has helped him in numerous job postings overseas, such as in Hong Kong, Singapore, Malaysia, Australia, Thailand and France. He is fluent in the various dialects of the mother tongue, and English. He is conversant in the Thai language and in French.</p>
       </section>
 
-      {/* Personal Statement / Testimonial Section */}
-      <section className="py-12 px-4 text-center bg-white border-b border-gray-200">
-        <blockquote className="italic max-w-2xl mx-auto text-xl text-gray-700 mb-4">“Mark’s architectural vision and technical leadership transformed our cloud migration project. He brings clarity, innovation, and a collaborative spirit to every challenge.”</blockquote>
-        <p className="text-gray-600">— CTO, Enterprise Client</p>
-      </section>
+      {/* Experience Timeline Section */}
+      <ExperienceTimeline />
 
-      {/* About / Skills Section */}
-      <section className="py-8 px-4 text-center bg-white">
-        <h2 className="text-2xl font-semibold mb-4">About Me</h2>
-        <p className="max-w-2xl mx-auto mb-4">As a Solutions Architect, I specialize in designing robust, scalable, and secure systems for organizations across diverse industries. My expertise spans cloud-native architectures (AWS, Azure, GCP), microservices, DevOps, and AI/ML integration. I thrive in collaborative environments, guiding teams from concept to deployment, and ensuring alignment with business goals.</p>
-        <h3 className="text-xl font-bold mt-8 mb-2">Core Skills</h3>
-        <ul className="flex flex-wrap justify-center gap-4 text-base text-gray-800 mb-4">
-          <li className="bg-gray-100 rounded px-3 py-1">Cloud Architecture (AWS, Azure, GCP)</li>
-          <li className="bg-gray-100 rounded px-3 py-1">Distributed Systems</li>
-          <li className="bg-gray-100 rounded px-3 py-1">DevOps & CI/CD</li>
-          <li className="bg-gray-100 rounded px-3 py-1">API & Microservices Design</li>
-          <li className="bg-gray-100 rounded px-3 py-1">AI/ML Integration</li>
-          <li className="bg-gray-100 rounded px-3 py-1">Security & Compliance</li>
-          <li className="bg-gray-100 rounded px-3 py-1">Team Leadership & Mentoring</li>
-          <li className="bg-gray-100 rounded px-3 py-1">Agile & Scrum</li>
-        </ul>
-        <div className="mt-4">
-          <a href="/docs/Mark%20Salvador_CV2.pdf" className="text-blue-600 underline font-medium" target="_blank" rel="noopener noreferrer">Download Full CV (PDF)</a>
-        </div>
-      </section>
+      {/* Skills Matrix Section */}
+      <SkillsMatrix />
 
       {/* Featured Project Section */}
       <section className="py-16 px-4 bg-[#f7f6f3] text-center border-b border-gray-200">
@@ -76,26 +96,24 @@ export default function Home() {
         <p className="mb-2 text-sm text-gray-700">Provides legal information, not legal advice. <a href="https://huggingface.co/Albiemark/matlock-canadian-law" className="text-blue-600 underline" target="_blank" rel="noopener noreferrer">View on Hugging Face</a></p>
       </section>
 
+      {/* Certifications Section */}
+      <CertificationsSection />
+
       {/* Portfolio Section */}
       <section className="py-16 px-4 text-center bg-white">
         <h2 className="text-2xl font-semibold mb-8">Portfolio Highlights</h2>
-        <div className="flex flex-col md:flex-row gap-8 justify-center">
-          <div className="flex-1 min-w-[220px]">
-            <h3 className="font-bold mb-2"><a href="https://github.com/Albiemark/trello-clone" className="text-blue-600 underline" target="_blank" rel="noopener noreferrer">Trello Clone</a></h3>
-            <p className="mb-2">Architected and developed a scalable Kanban-style project management app using TypeScript and modern web technologies.</p>
-          </div>
-          <div className="flex-1 min-w-[220px]">
-            <h3 className="font-bold mb-2"><a href="https://github.com/Albiemark/dbx-mcp-server" className="text-blue-600 underline" target="_blank" rel="noopener noreferrer">Dropbox MCP Server</a></h3>
-            <p className="mb-2">Designed a robust Dropbox MCP server for cursor .47, focusing on API integration, security, and reliability (TypeScript).</p>
-          </div>
-          <div className="flex-1 min-w-[220px]">
-            <h3 className="font-bold mb-2"><a href="https://github.com/Albiemark/VeeMatch" className="text-blue-600 underline" target="_blank" rel="noopener noreferrer">VeeMatch</a></h3>
-            <p className="mb-2">Led the architecture and implementation of a spiritual connection app, enabling secure user engagement and scalable features (TypeScript).</p>
-          </div>
-          <div className="flex-1 min-w-[220px]">
-            <h3 className="font-bold mb-2"><a href="https://github.com/Albiemark/LLM-Trainer" className="text-blue-600 underline" target="_blank" rel="noopener noreferrer">LLM-Trainer</a></h3>
-            <p className="mb-2">Built a flexible Python-based platform for training and evaluating large language models, supporting custom workflows and automation.</p>
-          </div>
+        {/* Project data */}
+        <ProjectFilter projects={projects} onFilter={setFilteredProjects} />
+        <div className="flex flex-wrap gap-8 justify-center">
+          {filteredProjects.map((project, index) => (
+            <ProjectCard
+              key={index}
+              title={project.title}
+              description={project.description}
+              githubLink={project.githubLink}
+              tags={project.tags}
+            />
+          ))}
         </div>
       </section>
 
