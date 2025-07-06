@@ -1,7 +1,7 @@
 import { Datastore } from '@google-cloud/datastore';
 import { NextResponse } from 'next/server';
 
-const datastore = new Datastore();
+const datastore = new Datastore({ projectId: 'vivid-motif-465017-f6' });
 const counterKey = datastore.key(['Counters', 'visits']);
 
 async function handleRequest() {
