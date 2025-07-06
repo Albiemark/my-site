@@ -4,7 +4,7 @@ import { NextResponse } from 'next/server';
 const firestore = new Firestore();
 const counterRef = firestore.collection('counters').doc('visits');
 
-export async function POST() {
+async function handleRequest() {
   try {
     await firestore.runTransaction(async (transaction) => {
       const doc = await transaction.get(counterRef);
@@ -20,4 +20,12 @@ export async function POST() {
     console.error('Error incrementing visit count:', error);
     return NextResponse.json({ success: false, error: 'Internal Server Error' }, { status: 500 });
   }
+}
+
+export async function GET() {
+  return handleRequest();
+}
+
+export async function POST() {
+  return handleRequest();
 }
