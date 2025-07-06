@@ -19,6 +19,7 @@ export default function Home() {
 
   return (
     <div className="min-h-screen flex flex-col font-sans bg-white text-gray-900">
+    
       {/* Hero Section */}
       <section className="flex flex-col items-center justify-center py-20 px-4 text-center bg-gradient-to-b from-[#f7f6f3] to-white border-b border-gray-200">
         <h1 className="text-4xl sm:text-6xl font-bold mb-4 tracking-tight">Ready to architect your next big idea?</h1>
