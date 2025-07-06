@@ -1,25 +1,35 @@
-import { Firestore } from '@google-cloud/firestore';
+import { Datastore } from '@google-cloud/datastore';
 import { NextResponse } from 'next/server';
 
-const firestore = new Firestore();
-const counterRef = firestore.collection('counters').doc('visits');
+const datastore = new Datastore();
+const counterKey = datastore.key(['Counters', 'visits']);
 
 async function handleRequest() {
   console.log('Visit API endpoint hit.');
   try {
-    console.log('Attempting to run Firestore transaction...');
-    await firestore.runTransaction(async (transaction) => {
-      console.log('Transaction started.');
-      const doc = await transaction.get(counterRef);
-      if (!doc.exists) {
-        console.log('Document does not exist. Creating with count: 1');
-        transaction.create(counterRef, { count: 1 });
-      } else {
-        const newCount = (doc.data()?.count || 0) + 1;
-        console.log(`Document exists. Updating count to: ${newCount}`);
-        transaction.update(counterRef, { count: newCount });
-      }
-    });
+    console.log('Attempting to run Datastore transaction...');
+    const transaction = datastore.transaction();
+    await transaction.run();
+
+    const [counter] = await transaction.get(counterKey);
+
+    if (!counter) {
+      console.log('Document does not exist. Creating with count: 1');
+      const newCounter = {
+        key: counterKey,
+        data: {
+          count: 1,
+        },
+      };
+      transaction.save(newCounter);
+    } else {
+      const newCount = (counter.count || 0) + 1;
+      console.log(`Document exists. Updating count to: ${newCount}`);
+      counter.count = newCount;
+      transaction.save(counter);
+    }
+
+    await transaction.commit();
     console.log('Transaction completed successfully.');
     return NextResponse.json({ success: true }, { status: 200 });
   } catch (error) {
