@@ -6,19 +6,23 @@ import SkillsMatrix from "../components/SkillsMatrix";
 import ProjectCard from "../components/ProjectCard";
 import ProjectFilter from "../components/ProjectFilter";
 import PhotoGallery from "../components/PhotoGallery";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { projects } from "../data/projects";
 import { Project } from "../types";
 
 export default function Home() {
   const [filteredProjects, setFilteredProjects] = useState<Project[]>(projects);
 
+  useEffect(() => {
+    fetch('/api/visit', { method: 'POST' });
+  }, []);
+
   return (
     <div className="min-h-screen flex flex-col font-sans bg-white text-gray-900">
       {/* Hero Section */}
       <section className="flex flex-col items-center justify-center py-20 px-4 text-center bg-gradient-to-b from-[#f7f6f3] to-white border-b border-gray-200">
         <h1 className="text-4xl sm:text-6xl font-bold mb-4 tracking-tight">Ready to architect your next big idea?</h1>
-        <p className="text-xl sm:text-2xl mb-8 max-w-2xl mx-auto">Hi, I’m <span className="font-semibold">Mark Salvador</span> — Solutions Architect & Technology Leader. I help organizations design, build, and scale secure, high-performance systems that solve real business problems.</p>
+        <p className="text-xl sm:text-2xl mb-8 max-w-2xl mx-auto">Hi, I’m <span className="font-semibold">Albie Mark Salvador</span> — Solutions Architect & Technology Leader. I help organizations design, build, and scale secure, high-performance systems that solve real business problems.</p>
         <div className="flex flex-wrap gap-4 justify-center mb-8">
           <a href="https://github.com/Albiemark" className="bg-black text-white px-6 py-3 rounded-full font-medium hover:bg-gray-800 transition" target="_blank" rel="noopener noreferrer">GitHub</a>
           <a href="https://huggingface.co/Albiemark" className="bg-blue-600 text-white px-6 py-3 rounded-full font-medium hover:bg-blue-700 transition" target="_blank" rel="noopener noreferrer">Hugging Face</a>
