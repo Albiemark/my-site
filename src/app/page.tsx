@@ -70,18 +70,20 @@ export default function Home() {
         <p className="mb-2 text-sm text-gray-700">Provides legal information, not legal advice. <a href="https://huggingface.co/Albiemark/matlock-canadian-law" className="text-blue-600 underline" target="_blank" rel="noopener noreferrer">View on Hugging Face</a></p>
       </section>
 
+
       {/* Product Demo Section */}
       <section className="py-16 px-4 bg-white text-center">
-        <h2 className="text-2xl font-semibold mb-4">Product Demo</h2>
-        <p className="max-w-2xl mx-auto mb-8">Watch a brief demonstration of the Matlock AI model in action.</p>
-        <div className="max-w-4xl mx-auto">
+        <h2 className="text-2xl font-semibold mb-4">Product Demo: Contract Maker</h2>
+        <p className="max-w-2xl mx-auto mb-8">Watch a brief demonstration of the Contract Maker web app in action.</p>
+        <div className="max-w-xl mx-auto">
           <video
-            src="/compressed_video.mp4"
+            src="/compressed_video_small.mp4"
             controls
             muted
             loop
             playsInline
-            className="rounded-lg shadow-xl w-full"
+            className="rounded-lg shadow-xl"
+            style={{ width: '33%' }}
           />
         </div>
       </section>

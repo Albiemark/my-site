@@ -11,10 +11,8 @@ const nextConfig: NextConfig = {
       },
     ],
   },
-  experimental: {
-    // Exclude gRPC libraries from bundling to prevent build errors
-    serverComponentsExternalPackages: ['google-gax', '@google-cloud/datastore'],
-  },
+  // Exclude gRPC libraries from bundling to prevent build errors
+  serverExternalPackages: ['google-gax', '@google-cloud/datastore'],
 };
 
 export default nextConfig;
