@@ -19,6 +19,8 @@ gantt
     Design Timeline Component     :done, des7, 2025-07-13, 2d
     Update Project Cards          :done, des8, 2025-07-15, 2d
     Add Professional Imagery      :done, des9, 2025-07-17, 1d
+    section Backend Features
+    Implement Visitor Counter     :done, des10, 2025-07-18, 3d
 ```
 
 ## Phase 1: Content Updates (3-4 days)
@@ -89,3 +91,17 @@ New content flow:
 - Custom illustrations (consider adding in future iterations)
 - Technology icons (consider adding in future iterations)
 - **Enhanced Experience Timeline with Imagery**: Added relevant images to timeline entries in `src/components/ExperienceTimeline.tsx`.
+
+## Phase 4: Backend Features (3 days)
+
+### 1. Persistent Visitor Counter
+- **Objective**: To replace the temporary in-memory visitor counter with a robust, persistent solution using Google Cloud Datastore. This will provide accurate tracking of website visits.
+- **Key Tasks (Completed)**:
+  - ✅ Installed and configured the `@google-cloud/datastore` client library.
+  - ✅ Set up a GCP service account and verified IAM permissions.
+  - ✅ Re-implemented the API route at `src/app/api/visit/route.ts` to connect to Datastore.
+  - ✅ Used a Datastore transaction to atomically read, increment, and write the visit count.
+  - ✅ Created a Datastore entity (Kind: `PageVisit`, Key: `site-counter`) to store the count.
+  - ✅ Fixed a deployment build error by excluding gRPC libraries from server component bundling in `next.config.ts`.
+- **Frontend Integration (Completed)**:
+  - ✅ Updated the main page (`src/app/page.tsx`) to fetch and display the persistent visit count from the API in the footer.

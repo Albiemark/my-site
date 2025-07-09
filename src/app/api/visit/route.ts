@@ -1,17 +1,49 @@
 import { NextResponse } from 'next/server';
+import { Datastore } from '@google-cloud/datastore';
 
-// Use a simple in-memory counter instead of Google Cloud Datastore
-// This is a temporary solution to fix the build error
-// In production, you would want to persist this data
+// Initialize Datastore
+// On Google Cloud (e.g., App Engine, Cloud Run), authentication is handled automatically.
+// For local development, you would need to set up authentication, for example,
+// by setting the GOOGLE_APPLICATION_CREDENTIALS environment variable.
+const datastore = new Datastore();
+const counterKey = datastore.key(['PageVisit', 'site-counter']);
 
-// Note: This counter will reset on server restart
-let visitCount = 0;
+/**
+ * Atomically retrieves and increments the visitor count in Datastore.
+ * Uses a transaction to prevent race conditions.
+ * @returns {Promise<number>} The new visit count.
+ */
+async function getAndIncrementCount() {
+  const transaction = datastore.transaction();
+  try {
+    await transaction.run();
+    const [counter] = await transaction.get(counterKey);
+
+    const newCount = (counter?.count || 0) + 1;
+    
+    const data = {
+        count: newCount,
+        updated: new Date() // Also track the last update time
+    };
+
+    transaction.save({
+      key: counterKey,
+      data: data,
+    });
+
+    await transaction.commit();
+    return newCount;
+  } catch (err) {
+    await transaction.rollback();
+    // Re-throw the error to be caught by the handler
+    throw err;
+  }
+}
 
 async function handleRequest() {
   console.log('Visit API endpoint hit.');
   try {
-    // Increment the counter
-    visitCount += 1;
+    const visitCount = await getAndIncrementCount();
     console.log(`Visit count incremented to: ${visitCount}`);
     
     return NextResponse.json({ 
@@ -36,11 +68,3 @@ export async function GET() {
 export async function POST() {
   return handleRequest();
 }
-
-// Add a comment explaining what needs to be done for production
-/*
- * TODO: For production deployment:
- * 1. Set up proper Google Cloud credentials
- * 2. Re-implement using Datastore or another persistent database
- * 3. Consider using environment variables for configuration
- */

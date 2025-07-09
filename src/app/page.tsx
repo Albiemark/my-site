@@ -12,9 +12,17 @@ import { Project } from "../types";
 
 export default function Home() {
   const [filteredProjects, setFilteredProjects] = useState<Project[]>(projects);
+  const [visitCount, setVisitCount] = useState<number | null>(null);
 
   useEffect(() => {
-    fetch('/api/visit', { method: 'POST' });
+    fetch('/api/visit', { method: 'POST' })
+      .then(res => res.json())
+      .then(data => {
+        if (data.success) {
+          setVisitCount(data.count);
+        }
+      })
+      .catch(console.error);
   }, []);
 
   return (
@@ -89,7 +97,12 @@ export default function Home() {
       {/* Footer */}
       <footer className="py-8 px-4 text-center text-sm text-gray-500 bg-white border-t mt-auto">
         <div className="mb-2">© {new Date().getFullYear()} Albiemark</div>
-        <div className="flex flex-wrap justify-center gap-4">
+        {visitCount !== null && (
+          <div className="mt-2 text-xs">
+            <p>Total Visits: {visitCount}</p>
+          </div>
+        )}
+        <div className="flex flex-wrap justify-center gap-4 mt-4">
           <a href="https://github.com/Albiemark" className="underline" target="_blank" rel="noopener noreferrer">GitHub</a>
           <a href="https://huggingface.co/Albiemark" className="underline" target="_blank" rel="noopener noreferrer">Hugging Face</a>
           <a href="https://huggingface.co/Albiemark/matlock-canadian-law" className="underline" target="_blank" rel="noopener noreferrer">Matlock Model</a>
