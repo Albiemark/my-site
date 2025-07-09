@@ -21,6 +21,8 @@ gantt
     Add Professional Imagery      :done, des9, 2025-07-17, 1d
     section Backend Features
     Implement Visitor Counter     :done, des10, 2025-07-18, 3d
+    section Multimedia Enhancements
+    Embed Product Demo Video      :done, des11, 2025-07-19, 1d
 ```
 
 ## Phase 1: Content Updates (3-4 days)
@@ -91,6 +93,12 @@ New content flow:
 - Custom illustrations (consider adding in future iterations)
 - Technology icons (consider adding in future iterations)
 - **Enhanced Experience Timeline with Imagery**: Added relevant images to timeline entries in `src/components/ExperienceTimeline.tsx`.
+
+### 4. Embedded Product Demo (Completed)
+- **Objective**: To showcase the "Matlock" application in action by embedding the compressed screen recording on the main page.
+- **Implementation**:
+  - ✅ A new "Product Demo" section has been added after the "Featured Project" section in `src/app/page.tsx`.
+  - ✅ The compressed video (`public/compressed_video.mp4`) is embedded using the HTML `<video>` tag with `controls`, `muted`, `loop`, and `playsinline` attributes.
 
 ## Phase 4: Backend Features (3 days)
 
