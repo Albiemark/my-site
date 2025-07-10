@@ -10,6 +10,7 @@ const nextConfig: NextConfig = {
         pathname: '/**',
       },
     ],
+    unoptimized: true,
   },
   // Exclude gRPC libraries from bundling to prevent build errors
   serverExternalPackages: ['google-gax', '@google-cloud/datastore'],

@@ -71,20 +71,41 @@ export default function Home() {
       </section>
 
 
-      {/* Product Demo Section */}
+      {/* Product Demos Section */}
       <section className="py-16 px-4 bg-white text-center">
-        <h2 className="text-2xl font-semibold mb-4">Product Demo: Contract Maker</h2>
-        <p className="max-w-2xl mx-auto mb-8">Watch a brief demonstration of the Contract Maker web app in action.</p>
-        <div className="max-w-xl mx-auto">
-          <video
-            src="/compressed_video_small.mp4"
-            controls
-            muted
-            loop
-            playsInline
-            className="rounded-lg shadow-xl"
-            style={{ width: '33%' }}
-          />
+        <h2 className="text-2xl font-semibold mb-8">Product Demos</h2>
+        <div className="flex flex-wrap justify-center gap-8">
+
+          {/* Contract Maker Demo */}
+          <div className="max-w-md bg-gray-50 p-6 rounded-lg shadow-lg">
+            <h3 className="text-xl font-bold mb-4">Contract Maker</h3>
+            <p className="mb-4">A brief demonstration of the Contract Maker web app.</p>
+            <video
+              src="/compressed_video_small.mp4"
+              controls
+              muted
+              loop
+              playsInline
+              className="rounded-lg shadow-xl mx-auto"
+              style={{ height: '480px' }}
+            />
+          </div>
+
+          {/* Matlock LLM Demo */}
+          <div className="max-w-md bg-gray-50 p-6 rounded-lg shadow-lg">
+            <h3 className="text-xl font-bold mb-4">Matlock LLM</h3>
+            <p className="mb-4">An interaction with the Matlock LLM, trained on Canadian Immigration Law.</p>
+            <video
+              src="/matlock_demo.mp4"
+              controls
+              muted
+              loop
+              playsInline
+              className="rounded-lg shadow-xl mx-auto"
+              style={{ width: '100%' }}
+            />
+          </div>
+
         </div>
       </section>
 
