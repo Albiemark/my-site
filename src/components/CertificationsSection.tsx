@@ -26,15 +26,15 @@ const CertificationsSection: React.FC = () => {
         {/* Add education background and ongoing learning here if available in consolidated resume */}
         <div>
           <h3 className="text-xl font-semibold mt-8 mb-4">Education</h3>
-          <div className="text-left">
+          <div>
             <p className="text-lg text-gray-800 mb-1">
               <span className="font-medium">2023 – 2025</span> Red River College Polytech (Exchange)
             </p>
-            <p className="text-md text-gray-600 ml-4">Advanced Dipoma BIT - Information Security</p>
+            <p className="text-md text-gray-600">Advanced Dipoma BIT - Information Security</p>
             <p className="text-lg text-gray-800 mt-4 mb-1">
               <span className="font-medium">1988 - 1994</span> University of the Philippines, Diliman
             </p>
-            <p className="text-md text-gray-600 ml-4">BSPED (Bachelor Special Education)</p>
+            <p className="text-md text-gray-600">BSPED (Bachelor Special Education)</p>
           </div>
         </div>
       </div>

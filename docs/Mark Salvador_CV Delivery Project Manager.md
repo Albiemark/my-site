@@ -73,3 +73,10 @@ Finance, Insurance, ATM/Switch, Mainframe, Shipping/Logistics, Maritime, Supply 
 ## CERTIFICATIONS
 *   AWS Certified Solutions Architect (2023)
 *   Project Management Professional (PMP)
+
+
+---
+
+## EDUCATION
+*   **2023 – 2025** Red River College Polytech (Exchange)
+    *Advanced Diploma BIT - Information Security*
