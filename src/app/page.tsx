@@ -35,7 +35,7 @@ export default function Home() {
         <div className="flex flex-wrap gap-4 justify-center mb-8">
           <a href="https://github.com/Albiemark" className="bg-black text-white px-6 py-3 rounded-full font-medium hover:bg-gray-800 transition" target="_blank" rel="noopener noreferrer">GitHub</a>
           <a href="https://huggingface.co/Albiemark" className="bg-blue-600 text-white px-6 py-3 rounded-full font-medium hover:bg-blue-700 transition" target="_blank" rel="noopener noreferrer">Hugging Face</a>
-          <a href="/Mark Salvador_CV Delivery Project Manager.pdf" className="bg-gray-200 text-gray-900 px-6 py-3 rounded-full font-medium hover:bg-gray-300 transition" target="_blank" rel="noopener noreferrer">Download CV</a>
+          <a href="/MarkSalvador_CV.pdf" className="bg-gray-200 text-gray-900 px-6 py-3 rounded-full font-medium hover:bg-gray-300 transition" target="_blank" rel="noopener noreferrer">Download CV</a>
         </div>
         <Image
           src="/me.jpg"
@@ -50,7 +50,7 @@ export default function Home() {
       <section className="py-16 px-4 bg-[#f7f6f3] text-center border-b border-gray-200">
         <h2 className="text-2xl font-semibold mb-4">Profile Summary</h2>
         <p className="max-w-2xl mx-auto mb-6 text-lg">An experienced IT professional with decades of IT experience, from solutions architecture, software development, network administration, systems design and security assessment. Proven ability to scale solutions and lead enterprise-wide transformations. Collaborative and curious, I excel in rigorous agile delivery, robust solutioning, data security, and operational excellence. I believe that AI will change the world, but it is the human connections that will make it a better place.</p>
-        <p className="max-w-2xl mx-auto mb-6 text-lg">Mr. Salvador is a technical architecture consultant and his experience includes project management, system analysis and design, programming, testing, implementation, deployment, and production support. He can work independently or as a team member, and takes pride in completing work on schedule and minimal rework. He has extensive experience in OSX, UNIX, NT, Win7/82k and other MS products. His ability to quickly learn and absorb foreign languages has helped him in numerous job postings overseas, such as in Hong Kong, Singapore, Malaysia, Australia, Thailand and France. He is fluent in the various dialects of the mother tongue, and English. He is conversant in the Thai language and in French.</p>
+        <p className="max-w-2xl mx-auto mb-6 text-lg">Mr. Salvador is a technical architecture consultant and his experience includes project management, system analysis and design, programming, testing, implementation, deployment, and production support. He can work independently or as a team member, and takes pride in completing work on schedule and minimal rework. He has extensive experience in OSX, UNIX, NT, Win7/8 Win 10/11 and other MS products. His ability to quickly learn and absorb foreign languages has helped him in numerous job postings overseas, such as in Hong Kong, Singapore, Malaysia, Australia, Thailand and France. He is fluent in the various dialects of the mother tongue, and English. He is conversant in the Thai language and in French.</p>
       </section>
 
       {/* Experience Timeline Section */}

@@ -1,4 +1,7 @@
 runtime: nodejs20
+handlers:
+- url: /.*
+  script: auto
 
 build_env_variables:
   GOOGLE_NODE_RUN_SCRIPTS: "build"
