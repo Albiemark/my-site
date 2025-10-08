@@ -15,8 +15,11 @@ const counterKey = datastore.key(['PageVisit', 'site-counter']);
  */
 async function getAndIncrementCount() {
   const transaction = datastore.transaction();
+  let transactionStarted = false;
+  
   try {
     await transaction.run();
+    transactionStarted = true;
     const [counter] = await transaction.get(counterKey);
 
     const newCount = (counter?.count || 0) + 1;
@@ -34,7 +37,10 @@ async function getAndIncrementCount() {
     await transaction.commit();
     return newCount;
   } catch (err) {
-    await transaction.rollback();
+    // Only rollback if the transaction was successfully started
+    if (transactionStarted) {
+      await transaction.rollback();
+    }
     // Re-throw the error to be caught by the handler
     throw err;
   }
