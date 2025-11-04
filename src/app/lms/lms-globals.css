@@ -1,0 +1,51 @@
+/*
+ * LMS Global Styles - Migrated to Chakra UI
+ * Retaining only necessary global styles and utility classes not easily replaced by Chakra props.
+ */
+
+.lms-app {
+  /* Chakra handles font-family, background-color, and anti-aliasing via theme.styles.global */
+  margin: 0;
+  padding: 0;
+}
+
+/* The .lms-container, typography, progress-stepper, question-card, and button styles
+   have been migrated to Chakra UI components and theme.ts.
+   Keeping only the base structure for the main container class, if it's still used
+   for centering/max-width outside of Chakra components.
+*/
+
+.lms-container {
+  max-width: 600px;
+  margin: 2rem auto;
+  padding: 0;
+}
+
+/* Retaining the base survey page layout if it's used outside of Chakra's Flex/Stack */
+.survey-page {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+/* Retaining review section style if it's used outside of Chakra's Box */
+.review-section {
+  background: #f7f7f7; /* Using hardcoded light gray as a fallback/utility */
+  padding: 1rem;
+  border-radius: 8px;
+}
+
+/* Retaining error message style if FormErrorMessage is not used everywhere */
+.error-message {
+  color: red;
+  font-size: 0.85rem;
+  margin-top: 0.5rem;
+}
+
+/* Retaining button group style if Flex is not used */
+.button-group {
+  display: flex;
+  justify-content: flex-end;
+  gap: 1rem;
+  margin-top: 2rem;
+}

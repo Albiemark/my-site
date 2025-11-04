@@ -1,29 +1,59 @@
 import { NextResponse } from 'next/server';
 import { get } from '@vercel/edge-config';
+import fs from 'fs/promises';
+import path from 'path';
 
 export const config = {
   runtime: 'edge',
 };
 
-let localCount = 0;
+const COUNTER_FILE = path.join(process.cwd(), 'visit-counter.json');
+
+async function getLocalCount() {
+  try {
+    const data = await fs.readFile(COUNTER_FILE, 'utf8');
+    return JSON.parse(data).count;
+  } catch {
+    return 0;
+  }
+}
+
+async function updateLocalCount(newCount: number) {
+  await fs.writeFile(
+    COUNTER_FILE,
+    JSON.stringify({
+      count: newCount,
+      lastUpdated: new Date().toISOString()
+    })
+  );
+}
 
 export async function GET() {
-  try {
-    // Development mode - use in-memory counter
-    if (process.env.NODE_ENV === 'development') {
-      localCount++;
-      return NextResponse.json({ 
-        success: true, 
-        count: localCount,
-        environment: 'development'
+  // Use local JSON if Edge Config not configured
+  if (!process.env.EDGE_CONFIG_ID || !process.env.EDGE_CONFIG_TOKEN) {
+    try {
+      const currentCount = await getLocalCount();
+      const newCount = currentCount + 1;
+      await updateLocalCount(newCount);
+      return NextResponse.json({
+        success: true,
+        count: newCount,
+        environment: 'local-fallback'
+      });
+    } catch (error) {
+      console.error('Local counter error:', error);
+      return NextResponse.json({
+        success: false,
+        error: 'Failed to update local counter'
       });
     }
+  }
 
-    // Production mode - use Edge Config
+  // Otherwise use Edge Config
+  try {
     const count = await get('visit_counter') || 0;
     const newCount = Number(count) + 1;
     
-    // Update Edge Config
     await fetch(
       `https://api.vercel.com/v1/edge-config/${process.env.EDGE_CONFIG_ID}/items`,
       {
@@ -42,21 +72,18 @@ export async function GET() {
       }
     );
 
-    return NextResponse.json({ 
-      success: true, 
+    return NextResponse.json({
+      success: true,
       count: newCount,
       environment: 'production'
     });
     
   } catch (error) {
-    console.error('Visit counter error:', error);
-    return NextResponse.json({ 
+    console.error('Edge Config error:', error);
+    return NextResponse.json({
       success: false,
-      error: 'Counter service unavailable',
-      details: process.env.NODE_ENV === 'development'
-        ? error instanceof Error ? error.message : String(error)
-        : 'Please try again later'
-    }, { status: 503 });
+      error: 'Edge Config operation failed'
+    });
   }
 }
 
