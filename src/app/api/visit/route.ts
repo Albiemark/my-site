@@ -1,42 +1,32 @@
 import { NextResponse } from 'next/server';
-import { kv } from '@vercel/kv';
+import { get } from '@vercel/edge-config';
 
-// Mock KV for local development
-const isLocal = process.env.NODE_ENV === 'development';
-let mockCount = 0;
+export const config = {
+  runtime: 'edge',
+};
 
 export async function GET() {
   try {
-    if (isLocal) {
-      // Local development - use mock counter
-      mockCount += 1;
-      console.log(`Local visit count: ${mockCount}`);
-      return NextResponse.json({ 
-        success: true, 
-        count: mockCount,
-        isLocal: true
-      });
-    }
-
-    // Production - use Vercel KV
-    if (!process.env.KV_REST_API_URL || !process.env.KV_REST_API_TOKEN) {
-      throw new Error('Vercel KV environment variables not configured');
-    }
-
-    const count = await kv.incr('visit-counter');
-    console.log(`Production visit count: ${count}`);
+    // Get current count from Edge Config
+    let count = (await get('visit_counter')) || 0;
+    
+    // Increment count
+    count = Number(count) + 1;
+    
+    // In a real app, you'd persist this back to Edge Config
+    // For demo purposes, we'll just return the incremented value
+    console.log(`Visit count: ${count}`);
     
     return NextResponse.json({ 
       success: true, 
-      count 
+      count,
+      note: "In production, implement Edge Config persistence"
     });
   } catch (error) {
     console.error('Error in visit counter API:', error);
-    const details = error instanceof Error ? error.message : 'An unknown error occurred';
     return NextResponse.json({ 
       success: false, 
-      error: 'Internal Server Error',
-      details
+      error: 'Internal Server Error'
     }, { status: 500 });
   }
 }
