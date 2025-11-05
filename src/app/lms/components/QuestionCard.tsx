@@ -65,7 +65,7 @@ export default function QuestionCard({
         </Heading>
 
         {description && (
-          <Text color="gray.600" fontSize="sm" p="0 1.5rem 1rem 1.5rem">
+          <Text color="black" fontWeight="medium" fontSize="sm" p="0 1.5rem 1rem 1.5rem">
             {description}
           </Text>
         )}
@@ -73,7 +73,7 @@ export default function QuestionCard({
         {inputType === 'text' && (
           <Box
             borderTop="1px"
-            borderColor="gray.200"
+            borderColor="blue.100"
             p="1rem 1.5rem"
             w="full"
           >
@@ -83,12 +83,14 @@ export default function QuestionCard({
               onChange={(e) => onChange(e.target.value)}
               required={required}
               border="1px"
-              borderColor="gray.300"
+              borderColor="blue.200"
               borderRadius="md"
               p="0.5rem 0.75rem"
               width="100%"
               maxWidth="none"
               minWidth="0"
+              bg="white"
+              color="black"
               flex="1"
               style={{ width: '100%', maxWidth: 'none' }}
               _focus={{ 
@@ -106,7 +108,9 @@ export default function QuestionCard({
               onChange={(e: React.ChangeEvent<HTMLSelectElement>) => onChange(e.target.value)}
               p="1rem 1.5rem"
               borderTop="1px"
-              borderColor="gray.200"
+              borderColor="blue.100"
+              bg="white"
+              color="black"
             >
               <option value="" disabled>Select an option</option>
               {options?.map((option) => (
@@ -118,12 +122,13 @@ export default function QuestionCard({
 
         {inputType === 'radio' && (
           <RadioGroup value={value} onValueChange={(details: { value: string | null }) => details.value && onChange(details.value)} name={question}>
-            <Stack direction="column" p="1rem 1.5rem" gap="3" borderTop="1px" borderColor="gray.200">
+            <Stack direction="column" p="1rem 1.5rem" gap="3" borderTop="1px" borderColor="blue.100">
               {options?.map((option) => (
                 <Radio
                   key={option}
                   value={option}
                   colorPalette="blue"
+                  color="black"
                 >
                   {option}
                 </Radio>
@@ -133,7 +138,7 @@ export default function QuestionCard({
         )}
       </Box>
       {isInvalid && (
-        <Field.ErrorText mt="0.5rem" fontSize="sm">
+        <Field.ErrorText mt="0.5rem" fontSize="sm" color="red.400">
           {error}
         </Field.ErrorText>
       )}
