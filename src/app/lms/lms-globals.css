@@ -3,6 +3,41 @@
  * Retaining only necessary global styles and utility classes not easily replaced by Chakra props.
  */
 
+/* Dark mode support using basic, hydration-safe selectors */
+@media (prefers-color-scheme: dark) {
+  .lms-app {
+    color-scheme: dark;
+    background-color: #1a1a1a;
+  }
+  
+  /* Simple selectors for basic text elements */
+  .lms-app p, 
+  .lms-app h1, 
+  .lms-app h2, 
+  .lms-app h3, 
+  .lms-app h4, 
+  .lms-app h5, 
+  .lms-app h6,
+  .lms-app div {
+    color: #ffffff !important;
+  }
+  
+  /* Simple rules for inputs */
+  .lms-app input,
+  .lms-app select,
+  .lms-app textarea {
+    color: #ffffff !important;
+    background-color: #333333 !important;
+    border-color: #555555 !important;
+  }
+  
+  /* Basic styles for links and buttons */
+  .lms-app a,
+  .lms-app button {
+    color: #90cdf4 !important;
+  }
+}
+
 .lms-app {
   /* Chakra handles font-family, background-color, and anti-aliasing via theme.styles.global */
   margin: 0;
