@@ -18,7 +18,7 @@ export default function LMSPage() {
           >
             Get Your Insurance Quote
           </Heading>
-          <Text fontSize={{ base: 'lg', md: 'xl' }} color="gray.800" fontWeight="medium" maxW="2xl" mx="auto">
+          <Text fontSize={{ base: 'lg', md: 'xl' }} color="black" fontWeight="medium" maxW="2xl" mx="auto">
             Answer a few quick questions to receive a personalized insurance quote tailored to your needs
           </Text>
         </Box>
@@ -45,7 +45,7 @@ export default function LMSPage() {
             <Heading as="h3" size="sm" mb="2" color="blue.900">
               Quick & Easy
             </Heading>
-            <Text fontSize="sm" color="gray.800" fontWeight="medium">
+            <Text fontSize="sm" color="black" fontWeight="medium">
               Complete in 5 minutes
             </Text>
           </Box>
@@ -66,7 +66,7 @@ export default function LMSPage() {
             <Heading as="h3" size="sm" mb="2" color="blue.900">
               Secure & Private
             </Heading>
-            <Text fontSize="sm" color="gray.800" fontWeight="medium">
+            <Text fontSize="sm" color="black" fontWeight="medium">
               Your data is protected
             </Text>
           </Box>
@@ -87,7 +87,7 @@ export default function LMSPage() {
             <Heading as="h3" size="sm" mb="2" color="blue.900">
               Personalized
             </Heading>
-            <Text fontSize="sm" color="gray.800" fontWeight="medium">
+            <Text fontSize="sm" color="black" fontWeight="medium">
               Quotes tailored to you
             </Text>
           </Box>
@@ -121,10 +121,10 @@ export default function LMSPage() {
                 1
               </Box>
               <Box>
-                <Heading as="h3" size="sm" mb="1" color="gray.800">
+                <Heading as="h3" size="sm" mb="1" color="blue.900">
                   Personal Information
                 </Heading>
-                <Text fontSize="sm" color="gray.800" fontWeight="medium">
+                <Text fontSize="sm" color="black" fontWeight="medium">
                   Tell us about yourself
                 </Text>
               </Box>
@@ -145,10 +145,10 @@ export default function LMSPage() {
                 2
               </Box>
               <Box>
-                <Heading as="h3" size="sm" mb="1" color="gray.800">
+                <Heading as="h3" size="sm" mb="1" color="blue.900">
                   Insurance Needs
                 </Heading>
-                <Text fontSize="sm" color="gray.800" fontWeight="medium">
+                <Text fontSize="sm" color="black" fontWeight="medium">
                   Select your coverage preferences
                 </Text>
               </Box>
@@ -169,10 +169,10 @@ export default function LMSPage() {
                 3
               </Box>
               <Box>
-                <Heading as="h3" size="sm" mb="1" color="gray.800">
+                <Heading as="h3" size="sm" mb="1" color="blue.900">
                   Health History
                 </Heading>
-                <Text fontSize="sm" color="gray.800" fontWeight="medium">
+                <Text fontSize="sm" color="black" fontWeight="medium">
                   Share relevant health information
                 </Text>
               </Box>
@@ -193,10 +193,10 @@ export default function LMSPage() {
                 4
               </Box>
               <Box>
-                <Heading as="h3" size="sm" mb="1" color="gray.800">
+                <Heading as="h3" size="sm" mb="1" color="blue.900">
                   Review & Submit
                 </Heading>
-                <Text fontSize="sm" color="gray.800" fontWeight="medium">
+                <Text fontSize="sm" color="black" fontWeight="medium">
                   Confirm your information and get your quote
                 </Text>
               </Box>
