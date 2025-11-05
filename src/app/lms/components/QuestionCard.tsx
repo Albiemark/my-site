@@ -9,7 +9,6 @@ import {
   NativeSelectRoot,
   NativeSelectField,
 } from '@chakra-ui/react';
-import { Radio, RadioGroup } from './ui/radio';
 
 interface QuestionCardProps {
   question: string;
@@ -121,20 +120,48 @@ export default function QuestionCard({
         )}
 
         {inputType === 'radio' && (
-          <RadioGroup value={value} onValueChange={(details: { value: string | null }) => details.value && onChange(details.value)} name={question}>
-            <Stack direction="column" p="1rem 1.5rem" gap="3" borderTop="1px" borderColor="blue.100">
+          <Box borderTop="1px" borderColor="blue.100" p="1rem 1.5rem">
+            <Stack direction="column" gap="3">
               {options?.map((option) => (
-                <Radio
+                <Box 
                   key={option}
-                  value={option}
-                  colorPalette="blue"
-                  color="black"
+                  onClick={() => onChange(option)}
+                  display="flex"
+                  alignItems="center"
+                  cursor="pointer"
+                  p="2"
+                  borderRadius="md"
+                  _hover={{
+                    bg: 'blue.50'
+                  }}
                 >
-                  {option}
-                </Radio>
+                  <Box
+                    w="4"
+                    h="4"
+                    borderRadius="full"
+                    borderWidth="2px"
+                    borderColor={value === option ? 'blue.500' : 'gray.300'}
+                    mr="3"
+                    position="relative"
+                  >
+                    {value === option && (
+                      <Box
+                        position="absolute"
+                        top="50%"
+                        left="50%"
+                        transform="translate(-50%, -50%)"
+                        w="2"
+                        h="2"
+                        borderRadius="full"
+                        bg="blue.500"
+                      />
+                    )}
+                  </Box>
+                  <Text color="black" fontWeight="medium">{option}</Text>
+                </Box>
               ))}
             </Stack>
-          </RadioGroup>
+          </Box>
         )}
       </Box>
       {isInvalid && (
