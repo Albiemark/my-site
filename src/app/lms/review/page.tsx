@@ -43,10 +43,10 @@ export default function ReviewPage() {
 
   const InfoItem = ({ label, value }: { label: string; value: string }) => (
     <Box>
-      <Text fontSize="sm" fontWeight="600" color="gray.600" mb="1">
+      <Text fontSize="sm" fontWeight="600" color="blue.900" mb="1">
         {label}
       </Text>
-      <Text fontSize="md" color="gray.800">
+      <Text fontSize="md" color="black" fontWeight="medium">
         {value || 'Not provided'}
       </Text>
     </Box>
@@ -66,7 +66,7 @@ export default function ReviewPage() {
           >
             Review Your Information
           </Heading>
-          <Text color="gray.600" fontSize="md">
+          <Text color="black" fontWeight="medium" fontSize="md">
             Please verify all details before submitting your application
           </Text>
         </Box>

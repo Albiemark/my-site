@@ -44,7 +44,7 @@ export default function ThankYouPage() {
             Application Submitted!
           </Heading>
           
-          <Text fontSize={{ base: 'lg', md: 'xl' }} color="gray.600">
+          <Text fontSize={{ base: 'lg', md: 'xl' }} color="black" fontWeight="medium">
             Thank you for completing your insurance quote application.
           </Text>
         </VStack>
@@ -62,13 +62,13 @@ export default function ThankYouPage() {
             WHAT HAPPENS NEXT?
           </Heading>
           <VStack gap="3" align="start">
-            <Text fontSize="md" color="gray.700" textAlign="left">
+            <Text fontSize="md" color="black" fontWeight="medium" textAlign="left">
               📧 You&apos;ll receive a confirmation email shortly
             </Text>
-            <Text fontSize="md" color="gray.700" textAlign="left">
+            <Text fontSize="md" color="black" fontWeight="medium" textAlign="left">
               📞 Our team will review your application and contact you within 1-2 business days
             </Text>
-            <Text fontSize="md" color="gray.700" textAlign="left">
+            <Text fontSize="md" color="black" fontWeight="medium" textAlign="left">
               💼 We&apos;ll work with you to find the best insurance plan for your needs
             </Text>
           </VStack>

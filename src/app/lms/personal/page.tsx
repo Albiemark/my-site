@@ -92,7 +92,7 @@ export default function PersonalInfoPage() {
           >
             Personal Information
           </Heading>
-          <Text color="gray.600" fontSize="md">
+          <Text color="black" fontWeight="medium" fontSize="md">
             Let&apos;s start with some basic information about you
           </Text>
         </Box>
@@ -132,6 +132,7 @@ export default function PersonalInfoPage() {
               boxShadow: 'md'
             }}
             transition="all 0.2s"
+            boxShadow="0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06)"
           >
             Continue →
           </Button>

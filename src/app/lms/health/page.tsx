@@ -68,7 +68,7 @@ export default function HealthHistoryPage() {
           >
             Health History
           </Heading>
-          <Text color="gray.600" fontSize="md">
+          <Text color="black" fontWeight="medium" fontSize="md">
             Help us understand your health profile
           </Text>
         </Box>

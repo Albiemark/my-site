@@ -60,7 +60,7 @@ export default function InsuranceNeedsPage() {
           >
             Insurance Needs
           </Heading>
-          <Text color="gray.600" fontSize="md">
+          <Text color="black" fontWeight="medium" fontSize="md">
             Tell us about the coverage you&apos;re looking for
           </Text>
         </Box>
