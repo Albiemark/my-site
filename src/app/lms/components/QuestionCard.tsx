@@ -42,7 +42,8 @@ export default function QuestionCard({
         boxShadow="0 4px 10px rgba(0, 0, 0, 0.2)"
         transition="all 0.3s ease"
         _hover={{ boxShadow: '0 6px 15px rgba(0, 0, 0, 0.3)' }}
-        overflow="hidden"
+        overflow="visible"
+        position="relative"
         bg="gray.800"
       >
         <Heading
@@ -74,7 +75,9 @@ export default function QuestionCard({
             borderTop="1px"
             borderColor="gray.600"
             p="1rem 1.5rem"
-            w="full"
+            w="150%"
+            ml="-25%"
+            position="relative"
           >
             <Input
               type="text"
@@ -101,26 +104,39 @@ export default function QuestionCard({
         )}
 
         {inputType === 'select' && (
-          <NativeSelectRoot>
-            <NativeSelectField
-              value={value}
-              onChange={(e: React.ChangeEvent<HTMLSelectElement>) => onChange(e.target.value)}
-              p="1rem 1.5rem"
-              borderTop="1px"
-              borderColor="gray.600"
-              bg="white"
-              color="black"
-            >
+          <Box
+            position="relative"
+            w="150%"
+            ml="-25%"
+          >
+            <NativeSelectRoot>
+              <NativeSelectField
+                value={value}
+                onChange={(e: React.ChangeEvent<HTMLSelectElement>) => onChange(e.target.value)}
+                p="1rem 1.5rem"
+                borderTop="1px"
+                borderColor="gray.600"
+                bg="white"
+                color="black"
+              >
               <option value="" disabled>Select an option</option>
               {options?.map((option) => (
                 <option key={option} value={option}>{option}</option>
               ))}
-            </NativeSelectField>
-          </NativeSelectRoot>
+              </NativeSelectField>
+            </NativeSelectRoot>
+          </Box>
         )}
 
         {inputType === 'radio' && (
-          <Box borderTop="1px" borderColor="gray.600" p="1rem 1.5rem">
+          <Box 
+            borderTop="1px" 
+            borderColor="gray.600" 
+            p="1rem 1.5rem"
+            w="150%"
+            ml="-25%"
+            position="relative"
+          >
             <Stack direction="column" gap="3">
               {options?.map((option) => (
                 <Box 
