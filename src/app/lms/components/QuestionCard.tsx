@@ -37,34 +37,34 @@ export default function QuestionCard({
     <Field.Root invalid={isInvalid}>
       <Box
         border="1px"
-        borderColor="blue.100"
+        borderColor="gray.600"
         borderRadius="xl"
-        boxShadow="0 4px 10px rgba(0, 51, 102, 0.05)"
+        boxShadow="0 4px 10px rgba(0, 0, 0, 0.2)"
         transition="all 0.3s ease"
-        _hover={{ boxShadow: '0 6px 15px rgba(0, 51, 102, 0.1)' }}
+        _hover={{ boxShadow: '0 6px 15px rgba(0, 0, 0, 0.3)' }}
         overflow="hidden"
-        bg="white"
+        bg="gray.800"
       >
         <Heading
           as="h3"
           size="sm"
           p="1.25rem 1.5rem"
-          bg="blue.50"
+          bg="blue.900"
           borderBottom="1px"
-          borderColor="blue.100"
+          borderColor="gray.600"
           display="flex"
           justifyContent="space-between"
           alignItems="center"
           fontWeight="bold"
           textTransform="uppercase"
-          color="blue.900"
+          color="white"
         >
           {question}
           {required && <Text as="span" color="red.500" ml="0.25rem">*</Text>}
         </Heading>
 
         {description && (
-          <Text color="black" fontWeight="medium" fontSize="sm" p="0 1.5rem 1rem 1.5rem">
+          <Text color="white" fontWeight="medium" fontSize="sm" p="0 1.5rem 1rem 1.5rem">
             {description}
           </Text>
         )}
@@ -72,7 +72,7 @@ export default function QuestionCard({
         {inputType === 'text' && (
           <Box
             borderTop="1px"
-            borderColor="blue.100"
+            borderColor="gray.600"
             p="1rem 1.5rem"
             w="full"
           >
@@ -107,7 +107,7 @@ export default function QuestionCard({
               onChange={(e: React.ChangeEvent<HTMLSelectElement>) => onChange(e.target.value)}
               p="1rem 1.5rem"
               borderTop="1px"
-              borderColor="blue.100"
+              borderColor="gray.600"
               bg="white"
               color="black"
             >
@@ -120,7 +120,7 @@ export default function QuestionCard({
         )}
 
         {inputType === 'radio' && (
-          <Box borderTop="1px" borderColor="blue.100" p="1rem 1.5rem">
+          <Box borderTop="1px" borderColor="gray.600" p="1rem 1.5rem">
             <Stack direction="column" gap="3">
               {options?.map((option) => (
                 <Box 
@@ -132,7 +132,7 @@ export default function QuestionCard({
                   p="2"
                   borderRadius="md"
                   _hover={{
-                    bg: 'blue.50'
+                    bg: 'gray.700'
                   }}
                 >
                   <Box
@@ -140,7 +140,7 @@ export default function QuestionCard({
                     h="4"
                     borderRadius="full"
                     borderWidth="2px"
-                    borderColor={value === option ? 'blue.500' : 'gray.300'}
+                    borderColor={value === option ? 'blue.300' : 'gray.400'}
                     mr="3"
                     position="relative"
                   >
@@ -153,11 +153,11 @@ export default function QuestionCard({
                         w="2"
                         h="2"
                         borderRadius="full"
-                        bg="blue.500"
+                        bg="blue.300"
                       />
                     )}
                   </Box>
-                  <Text color="black" fontWeight="medium">{option}</Text>
+                  <Text color="white" fontWeight="medium">{option}</Text>
                 </Box>
               ))}
             </Stack>
