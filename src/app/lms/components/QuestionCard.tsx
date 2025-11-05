@@ -74,9 +74,7 @@ export default function QuestionCard({
           <Box
             borderTop="1px"
             borderColor="gray.600"
-            p="1rem 1.5rem"
-            w="150%"
-            ml="-25%"
+            p="1rem 0.75rem"
             position="relative"
           >
             <Input
@@ -106,8 +104,7 @@ export default function QuestionCard({
         {inputType === 'select' && (
           <Box
             position="relative"
-            w="150%"
-            ml="-25%"
+            p="0 0.75rem"
           >
             <NativeSelectRoot>
               <NativeSelectField
@@ -132,9 +129,7 @@ export default function QuestionCard({
           <Box 
             borderTop="1px" 
             borderColor="gray.600" 
-            p="1rem 1.5rem"
-            w="150%"
-            ml="-25%"
+            p="1rem 0.75rem"
             position="relative"
           >
             <Stack direction="column" gap="3">
