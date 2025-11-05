@@ -86,7 +86,7 @@ export default function PersonalInfoPage() {
             as="h1"
             fontSize={{ base: '2xl', md: '3xl' }}
             fontWeight="bold"
-            color="blue.900"
+            color="gray.400"
             mb="2"
             textTransform="uppercase"
           >
