@@ -1,53 +1,26 @@
 'use client'
 
-import { ClientOnly } from '@chakra-ui/react'
-import { createContext, useContext, useState, ReactNode, useEffect } from 'react'
+import { createContext, useContext, ReactNode } from 'react'
 
-// Create a context to manage color mode
+// Create a simplified context - no state, just structure
 const ColorModeContext = createContext({
   colorMode: 'light',
   toggleColorMode: () => {},
 })
 
-// Simple implementation for ColorModeProvider in Chakra UI v3
+// Simplified ColorModeProvider that doesn't use media queries or state
+// This is hydration-safe because it doesn't attempt to detect color mode on the client
 export function ColorModeProvider({ children }: { children: ReactNode }) {
-  // Use React's useState to manage color mode
-  const [colorMode, setColorMode] = useState<'light' | 'dark'>('light')
-  
-  // Check system preference on load
-  useEffect(() => {
-    if (typeof window !== 'undefined') {
-      // Check for system dark mode preference
-      const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches
-      setColorMode(prefersDark ? 'dark' : 'light')
-      
-      // Listen for changes to system preference
-      const mediaQuery = window.matchMedia('(prefers-color-scheme: dark)')
-      const handleChange = (e: MediaQueryListEvent) => {
-        setColorMode(e.matches ? 'dark' : 'light')
-      }
-      
-      mediaQuery.addEventListener('change', handleChange)
-      return () => mediaQuery.removeEventListener('change', handleChange)
-    }
-  }, [])
-  
-  // Toggle between light and dark
-  const toggleColorMode = () => {
-    setColorMode(prev => prev === 'light' ? 'dark' : 'light')
-  }
-  
-  // Provide color mode context to children
+  // Just wrap children without any dynamic behavior
+  // We're handling dark appearance at the component level now
   return (
     <ColorModeContext.Provider 
       value={{ 
-        colorMode, 
-        toggleColorMode
+        colorMode: 'light', 
+        toggleColorMode: () => {}
       }}
     >
-      <ClientOnly>
-        {children}
-      </ClientOnly>
+      {children}
     </ColorModeContext.Provider>
   )
 }

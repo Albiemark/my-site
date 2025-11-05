@@ -2,18 +2,17 @@
 
 import { ChakraProvider, defaultSystem } from '@chakra-ui/react'
 import { ReactNode } from 'react'
+import { ColorModeProvider } from './components/ui/color-mode'
 
-// Simple customization that avoids the complex structure that was causing hydration issues
-const customSystem = {
-  ...defaultSystem,
-  // We'll use the existing Chakra UI system without any modifications
-  // This ensures compatibility with mobile and prevents hydration errors
-}
+// Using default system to avoid hydration mismatches
+const system = defaultSystem
 
 export default function ChakraProviderWrapper({ children }: { children: ReactNode }) {
   return (
-    <ChakraProvider value={customSystem}>
-      {children}
+    <ChakraProvider value={system}>
+      <ColorModeProvider>
+        {children}
+      </ColorModeProvider>
     </ChakraProvider>
   )
 }
