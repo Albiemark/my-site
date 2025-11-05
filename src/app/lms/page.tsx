@@ -5,14 +5,14 @@ import { LuClipboardCheck, LuShield, LuClock } from 'react-icons/lu'
 export default function LMSPage() {
   return (
     <Container maxW="4xl" py="8">
-      <VStack gap="8" align="stretch">
+      <VStack gap="2" align="stretch">
         {/* Hero Section */}
         <Box textAlign="center" py="8">
           <Heading
             as="h1"
             fontSize={{ base: '3xl', md: '4xl', lg: '5xl' }}
             fontWeight="bold"
-            color="blue.900"
+            color="gray.400"
             mb="4"
             textTransform="uppercase"
           >
