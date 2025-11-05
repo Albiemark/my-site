@@ -1,3 +1,5 @@
+'use client'
+
 import { Box, Flex, Text, Circle } from '@chakra-ui/react';
 
 interface ProgressStepperProps {
